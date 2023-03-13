@@ -11,7 +11,7 @@ startButton.addEventListener('click', function() {
       console.log(json.species[0]);
       var songSelector = Math.floor(Math.random() * 5);
       console.log(json.species[0].songs[songSelector]);
-      var songPath = "https://theseanfraser.github.io/birdcabulary/" + json.species[0].songs[songSelector];
+      var songPath = "https://theseanfraser.github.io/birdcabulary/sounds/" + json.species[0].songs[songSelector];
       var audio = new Audio(songPath);
       audio.play();
 });
