@@ -8,8 +8,7 @@
 		<h2>Birdcabulary</h2>
 		<p>Test your Ontario warbler song knowledge.</p>
 		
-		<audio id="sound1" src="https://theseanfraser.github.io/birdcabulary/sounds/BWWA/songs/XC558029%20-%20Blue-winged%20Warbler%20-%20Vermivora%20cyanoptera.mp3" preload="auto"></audio>
-  		<button onclick="document.getElementById('sound1').play();">Play</button>
+  		<button id="start-button">Play</button>
 
   		<p>Make your selection below:</p>
   		<div class="btn-group">
@@ -23,5 +22,9 @@
 
 		<div id="citation">Current sound's citation: Matt Wistrand, XC558029. Accessible at www.xeno-canto.org/558029.</div>
 	</body>
-	<footer>Sean Fraser - 2023</footer>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/sound-manager.js"></script>
+	<footer>
+		Sean Fraser - 2023
+	</footer>
 </html>

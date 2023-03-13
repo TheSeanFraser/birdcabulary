@@ -1,0 +1,20 @@
+{
+  "species": [
+    {
+      "name": "Blue-winged Warbler",
+      "code": "BWWA",
+      "family": "Warblers",
+      "songs": [
+        "XC390887.mp3",
+        "XC558029.mp3",
+        "XC572253.mp3",
+        "XC600708.mp3",
+        "XC691173.mp3"
+      ],
+      "calls": [
+        "XC999999.mp3",
+        "XC000000.mp3"
+      ]
+    }
+  ]
+}
