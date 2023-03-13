@@ -2,8 +2,26 @@
 <html>
 	<head>
 		<title>Birdcabulary</title>
+		<!-- <script src="js/playSound.js"></script> -->
 	</head>
 	<body>
-		Test your Ontario warbler song knowledge.
+		<h2>Birdcabulary</h2>
+		<p>Test your Ontario warbler song knowledge.</p>
+		
+		<audio id="sound1" src="https://theseanfraser.github.io/birdcabulary/sounds/BWWA/songs/XC558029%20-%20Blue-winged%20Warbler%20-%20Vermivora%20cyanoptera.mp3" preload="auto"></audio>
+  		<button onclick="document.getElementById('sound1').play();">Play</button>
+
+  		<p>Make your selection below:</p>
+  		<div class="btn-group">
+		  <button>Blue-winged Warbler</button>
+		  <button>Golden-winged Warbler</button>
+		  <button>Nashville Warbler</button>
+		  <button>Northern Parula</button>
+		  <button>Orange-crowned Warbler</button>
+		  <button>Tennesee Warbler</button>
+		</div>
+
+		<div id="citation">Current sound's citation: Matt Wistrand, XC558029. Accessible at www.xeno-canto.org/558029.</div>
 	</body>
+	<footer>Sean Fraser - 2023</footer>
 </html>
