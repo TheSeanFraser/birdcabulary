@@ -8,8 +8,15 @@ body {
   font-size: 25px;
 }
 
+#prevCorrect{
+  margin-top: 10px;
+}
+#citation{
+  margin-top: 10px;
+}
+
 button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
   border-radius: 8px;

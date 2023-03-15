@@ -5,6 +5,7 @@ const citationElement = document.getElementById('citation');
 const audioElement = document.getElementById('audio');
 const responseElement = document.getElementById('response');
 const promptElement = document.getElementById('prompt');
+const prevCorrectElement = document.getElementById('prevCorrect');
 
 var audio = new Audio();
 
@@ -32,6 +33,13 @@ async function callGetCitations() {
 
 callGetCitations();
 
+function searchStringInArray (str, strArray) {
+    for (var j=0; j<strArray.length; j++) {
+        if (strArray[j].match(str)) return j;
+    }
+    return -1;
+}
+
 function getNextSetup(){
   // Stop current audio if playing
   audio.pause();
@@ -56,7 +64,9 @@ function getNextSetup(){
 
       // Get and set the citation for the current sound
       // console.log(citationList);
-      citationElement.innerHTML = "Current sound's citation: " + curSound;
+      
+      var matches = citationList.filter(s => s.includes(curSound.slice(0, -4)));
+      citationElement.innerHTML = "Current sound's citation: " + matches;
 
       // Set the buttons up, need list of species first
       var speciesList = [];
@@ -90,6 +100,7 @@ function setButtons(btnGroup, btnList){
 startButton.addEventListener('click', function() {
   console.log('Start button clicked!');
   startButton.remove();
+  citationList = citationList.split('\n');
 
   promptElement.innerHTML = "Make your selection below:"
   // start the quiz with the first setup
@@ -111,6 +122,7 @@ function mcButtonSelected(id){
     responseElement.innerHTML = "Incorrect! " + curScore + '/' + totalSongs;
   }
 
+  prevCorrectElement.innerHTML = "Previous answer: " + curSpecies;
   // Continue to next sound
   getNextSetup();
 }
