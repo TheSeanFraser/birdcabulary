@@ -2,27 +2,26 @@
 <html>
 	<head>
 		<title>Birdcabulary</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<!-- <script src="js/playSound.js"></script> -->
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
+		<audio id="audio"></audio>
 		<h2>Birdcabulary</h2>
 		<p>Test your Ontario warbler song knowledge.</p>
 		
   		<button id="start-button">Play</button>
 
   		<p>Make your selection below:</p>
-  		<div class="btn-group">
-		  <button>Blue-winged Warbler</button>
-		  <button>Golden-winged Warbler</button>
-		  <button>Nashville Warbler</button>
-		  <button>Northern Parula</button>
-		  <button>Orange-crowned Warbler</button>
-		  <button>Tennesee Warbler</button>
+  		<div id="mcButtons" class="btn-group">
+
 		</div>
 
+		<div id="response">Response</div>
 		<div id="citation">Current sound's citation: Matt Wistrand, XC558029. Accessible at www.xeno-canto.org/558029.</div>
 	</body>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
 	<script src="js/sound-manager.js"></script>
 	<footer>
 		Sean Fraser - 2023
