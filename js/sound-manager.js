@@ -4,6 +4,7 @@ const mcButtons = document.getElementById('mcButtons');
 const citationElement = document.getElementById('citation');
 const audioElement = document.getElementById('audio');
 const responseElement = document.getElementById('response');
+const promptElement = document.getElementById('prompt');
 
 var audio = new Audio();
 
@@ -34,7 +35,6 @@ callGetCitations();
 function getNextSetup(){
   // Stop current audio if playing
   audio.pause();
-  totalSongs++;
 
   // Get the database file and select a species and sound
   $.getJSON("database.json", function(json) {
@@ -89,7 +89,9 @@ function setButtons(btnGroup, btnList){
 // This button starts everything
 startButton.addEventListener('click', function() {
   console.log('Start button clicked!');
+  startButton.remove();
 
+  promptElement.innerHTML = "Make your selection below:"
   // start the quiz with the first setup
   getNextSetup();
 });
@@ -97,13 +99,16 @@ startButton.addEventListener('click', function() {
 // onClick for MC Buttons to determine answer 
 function mcButtonSelected(id){
   if (id == curSpecies){
-    console.log("CORRECT!");
-    responseElement.innerHTML = "Correct!";
     curScore++;
+    totalSongs++;
+    console.log("CORRECT!");
+    responseElement.innerHTML = "Correct! " + curScore + '/' + totalSongs;
+    
   }
   else{
+    totalSongs++;
     console.log("INCORRECT!");
-    responseElement.innerHTML = "Incorrect!";
+    responseElement.innerHTML = "Incorrect! " + curScore + '/' + totalSongs;
   }
 
   // Continue to next sound
