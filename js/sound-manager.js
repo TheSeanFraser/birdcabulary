@@ -4,7 +4,6 @@ const mcButtons = document.getElementById('mcButtons');
 const citationElement = document.getElementById('citation');
 const audioElement = document.getElementById('audio');
 const responseElement = document.getElementById('response');
-const promptElement = document.getElementById('prompt');
 const prevCorrectElement = document.getElementById('prevCorrect');
 
 var audio = new Audio();
@@ -44,6 +43,8 @@ function getNextSetup(){
   // Stop current audio if playing
   audio.pause();
 
+  var speciesNumList = [];
+
   // Get the database file and select a species and sound
   $.getJSON("database.json", function(json) {
       console.log(json);
@@ -52,6 +53,7 @@ function getNextSetup(){
 
       // Select random species
       var speciesSelector = Math.floor(Math.random() * json.species.length);
+      speciesNumList.push(speciesSelector);
 
       // Get species name
       curSpecies = json.species[speciesSelector].name;
@@ -68,12 +70,27 @@ function getNextSetup(){
       var matches = citationList.filter(s => s.includes(curSound.slice(0, -4)));
       citationElement.innerHTML = "Current sound's citation: " + matches;
 
-      // Set the buttons up, need list of species first
+      // Select 3 extra random species for buttons
+      while (speciesNumList.length < 4){
+        var r = Math.floor(Math.random() * json.species.length)
+        if(speciesNumList.indexOf(r) === -1) speciesNumList.push(r);
+      }
+      console.log(speciesNumList);
+
+      // var speciesList = [];
+      // for (var i = 0; i < json.species.length; i++){
+      //   curName = json.species[i].name;
+      //   speciesList.push(curName);
+      // }
+
+      //Set the buttons up, need list of species first
       var speciesList = [];
-      for (var i = 0; i < json.species.length; i++){
-        curName = json.species[i].name;
+      for (var i = 0; i < speciesNumList.length; i++){
+        curIndex = speciesNumList[i];
+        curName = json.species[curIndex].name;
         speciesList.push(curName);
       }
+      speciesList = speciesList.sort((a, b) => 0.5 - Math.random());
       setButtons(mcButtons,speciesList)
 
       // Play the sound
@@ -101,8 +118,6 @@ startButton.addEventListener('click', function() {
   console.log('Start button clicked!');
   startButton.remove();
   citationList = citationList.split('\n');
-
-  promptElement.innerHTML = "Make your selection below:"
   // start the quiz with the first setup
   getNextSetup();
 });
