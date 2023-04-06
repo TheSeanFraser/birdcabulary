@@ -49,6 +49,19 @@
             ]
         },
         {
+            "name": "Chestnut-sided Warbler",
+            "code": "CSWA",
+            "family": "Warblers",
+            "songs": [
+                "XC567897",
+                "XC600739",
+                "XC720356",
+                "XC727282",
+                "XC732487"
+            ],
+            "calls": []
+        },
+        {
             "name": "Northern Parula",
             "code": "NOPA",
             "family": "Warblers",
