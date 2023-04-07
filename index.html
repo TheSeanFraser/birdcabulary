@@ -5,24 +5,32 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<!-- <script src="js/playSound.js"></script> -->
 		<link rel="stylesheet" href="css/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<audio id="audio"></audio>
 		<h2>Birdcabulary</h2>
 		<p>Test your Ontario warbler song knowledge.</p>
+		<p id="signature">Sean Fraser - 2023</p>
 		
-  		<button id="start-button">Play</button>
   		<div id="response"></div>
   		<div id="prevCorrect"></div>
+
+  		<div id="citation"></div>
 		
-  		<div id="mcButtons" class="btn-group"></div>
-		<div id="citation"></div>
+		<div id="wrapper"> 
+			<div id="mcButtons" class="btn-group">
+  				<button id="start-button">Play</button>
+  			</div>
+			
+		</div>
+  		
 		
 	</body>
 	
 	<script src="js/sound-manager.js"></script>
 
 	<footer id="footer">
-		<p>Sean Fraser - 2023</p>
+		
 	</footer>
 </html>
