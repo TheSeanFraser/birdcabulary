@@ -5,6 +5,7 @@ const citationElement = document.getElementById('citation');
 const audioElement = document.getElementById('audio');
 const responseElement = document.getElementById('response');
 const prevCorrectElement = document.getElementById('prevCorrect');
+const promptElement = document.getElementById('prompt');
 
 var audio = new Audio();
 
@@ -117,6 +118,7 @@ function setButtons(btnGroup, btnList){
 startButton.addEventListener('click', function() {
   console.log('Start button clicked!');
   startButton.remove();
+  promptElement.remove();
   citationList = citationList.split('\n');
   // start the quiz with the first setup
   getNextSetup();

@@ -4,19 +4,27 @@ body {
   color:  white;
   text-align: center;
 }
+
 #response{
   font-size: 25px;
 }
 
 #prevCorrect{
-  margin-top: 10px;
+  margin-top: 15px;
+  color: gray;
 }
+
+#signature{
+  color: darkgray;
+}
+
 #citation{
   margin-top: 10px;
+  color: gray;
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #4f4f4f;
   border: none;
   color: white;
   border-radius: 8px;
@@ -40,7 +48,7 @@ footer{
     
   }  
   button {
-    background-color: #4CAF50;
+    background-color: #4f4f4f;
     border: none;
     color: white;
     border-radius: 8px;
