@@ -69,7 +69,7 @@ function getNextSetup(){
       // console.log(citationList);
       
       var matches = citationList.filter(s => s.includes(curSound.slice(0, -4)));
-      citationElement.innerHTML = "Current sound's citation: " + matches;
+      citationElement.innerHTML = "Current sound's source: <br>" + matches[0];
 
       // Select 3 extra random species for buttons
       while (speciesNumList.length < 4){
