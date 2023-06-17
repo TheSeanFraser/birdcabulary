@@ -8,6 +8,7 @@ const prevCorrectElement = document.getElementById('prevCorrect');
 const promptElement = document.getElementById('prompt');
 // Vars for selector section
 const familyChecksElement = document.getElementById('family_response');
+const selectorPageElement = document.getElementById('selector_page');
 
 var audio = new Audio();
 
@@ -41,16 +42,17 @@ callGetCitations();
 function getBirdFamilies(){
     // Get the database file and select a species and sound
   $.getJSON("families.json", function(json) {
-      console.log(json);
       for (var key in json){
-        console.log(key);
+        var newDiv = document.createElement('div');
+        newDiv.innerHTML = key;
         var checkbox = document.createElement('input');
         checkbox.type = "checkbox";
         checkbox.name = key;
-        checkbox.value = "value";
         checkbox.id = key;
-        checkbox.class = "family_box"
-        familyChecksElement.appendChild(checkbox);
+        checkbox.value = true;
+        checkbox.className = "family_box"
+        newDiv.appendChild(checkbox);
+        familyChecksElement.appendChild(newDiv);
       }
       families = json;
       
@@ -144,9 +146,20 @@ function setButtons(btnGroup, btnList){
 // Add a click event listener to the button
 // This button starts everything
 startButton.addEventListener('click', function() {
+  var sound_type_matches = document.querySelectorAll(".sound_type_box:checked");
+  for(var i = 0; i < sound_type_matches.length; i++){
+    console.log(sound_type_matches[i].name);
+  }
+  // TODO: Add bird sound type and family filter here
+  var family_matches = document.querySelectorAll('.family_box:checked');
+  for(var i = 0; i < family_matches.length; i++){
+    console.log(family_matches[i].name);
+  }
+
+
   console.log('Start button clicked!');
+  selectorPageElement.remove();
   startButton.remove();
-  promptElement.remove();
   citationList = citationList.split('\n');
   // start the quiz with the first setup
   getNextSetup();
