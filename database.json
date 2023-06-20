@@ -563,6 +563,71 @@
                 "XC713591.mp3"
             ],
             "calls": []
+        },
+        {
+            "name": "Philadelphia Vireo",
+            "code": "PHVI",
+            "songs": [
+                "XC13584.mp3",
+                "XC186320.mp3",
+                "XC189442.mp3",
+                "XC22433.mp3",
+                "XC476961.mp3",
+                "XC624416.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Yellow-throated Vireo",
+            "code": "YTVI",
+            "songs": [
+                "XC615888.mp3",
+                "XC692223.mp3",
+                "XC692224.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Blue-headed Vireo",
+            "code": "BHVI",
+            "songs": [
+                "XC626749.mp3",
+                "XC691165.mp3",
+                "XC694672.mp3",
+                "XC787066.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Red-eyed Vireo",
+            "code": "REVI",
+            "songs": [
+                "XC691876.mp3",
+                "XC728084.mp3",
+                "XC738211.mp3",
+                "XC805854.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "White-eyed Vireo",
+            "code": "WEVI",
+            "songs": [
+                "XC705812.mp3",
+                "XC714441.mp3",
+                "XC723254.mp3",
+                "XC779850.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Warbling Vireo",
+            "code": "WAVI",
+            "songs": [
+                "XC749762.mp3",
+                "XC753120.mp3"
+            ],
+            "calls": []
         }
     ]
 }
