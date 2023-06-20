@@ -19,8 +19,11 @@ var curCitation = "";
 var curScore = 0;
 var totalSongs = 0;
 
-var families = 0;
+var birdFamiliesJSON = {};
+var speciesSelected = [];
 
+var song_bool = false;
+var call_bool = false;
 
 
 // To get citation list, it must be done asynchronously
@@ -54,7 +57,8 @@ function getBirdFamilies(){
         newDiv.appendChild(checkbox);
         familyChecksElement.appendChild(newDiv);
       }
-      families = json;
+
+      birdFamiliesJSON = json;
       
   });
 
@@ -62,14 +66,7 @@ function getBirdFamilies(){
 
 getBirdFamilies();
 
-
-function searchStringInArray (str, strArray) {
-    for (var j=0; j<strArray.length; j++) {
-        if (strArray[j].match(str)) return j;
-    }
-    return -1;
-}
-
+// Start the next part of the game
 function getNextSetup(){
   // Stop current audio if playing
   audio.pause();
@@ -78,26 +75,34 @@ function getNextSetup(){
 
   // Get the database file and select a species and sound
   $.getJSON("database.json", function(json) {
-      console.log(json);
+      // console.log(json);
       // Clear buttons first
       mcButtons.innerHTML="";
 
-      // Select random species
-      var speciesSelector = Math.floor(Math.random() * json.species.length);
+      // Pick species from the preselected list of families
+      var selected_species = Math.floor(Math.random() * speciesSelected.length);
+      
+      // Match the species to the index in the database
+      var speciesSelector = 0;
+      for(var i = 0; i < json.species.length; i++){
+        if(json.species[i].name == speciesSelected[selected_species]){
+          speciesSelector = i
+        }
+      }
+
+      // Add current species index to the index list for the MC buttons
       speciesNumList.push(speciesSelector);
 
       // Get species name
       curSpecies = json.species[speciesSelector].name;
-      console.log("Current species: " + curSpecies);
+      // console.log("Current species: " + curSpecies);
 
       // Get and play a random song for the species
       var songSelector = Math.floor(Math.random() * json.species[speciesSelector].songs.length);
       curSound =  json.species[speciesSelector].songs[songSelector];
-      console.log("Current sound: " + curSound);
+      // console.log("Current sound: " + curSound);
 
       // Get and set the citation for the current sound
-      // console.log(citationList);
-      
       var matches = citationList.filter(s => s.includes(curSound.slice(0, -4)));
       citationElement.innerHTML = "Current sound's source: <br>" + matches[0];
 
@@ -106,13 +111,6 @@ function getNextSetup(){
         var r = Math.floor(Math.random() * json.species.length)
         if(speciesNumList.indexOf(r) === -1) speciesNumList.push(r);
       }
-      console.log(speciesNumList);
-
-      // var speciesList = [];
-      // for (var i = 0; i < json.species.length; i++){
-      //   curName = json.species[i].name;
-      //   speciesList.push(curName);
-      // }
 
       //Set the buttons up, need list of species first
       var speciesList = [];
@@ -143,18 +141,36 @@ function setButtons(btnGroup, btnList){
   });
 }
 
-// Add a click event listener to the button
 // This button starts everything
 startButton.addEventListener('click', function() {
+  // Build list of sound types and species
+  // Set the sound type flags
   var sound_type_matches = document.querySelectorAll(".sound_type_box:checked");
   for(var i = 0; i < sound_type_matches.length; i++){
-    console.log(sound_type_matches[i].name);
+    var cur_sound_type = sound_type_matches[i].name;
+    if(cur_sound_type == "Songs"){
+      song_bool = true;
+    } else if (cur_sound_type == "Calls"){
+      call_bool = true;
+    } 
   }
-  // TODO: Add bird sound type and family filter here
+
+  // Build the list of selected families from the checkboxes
   var family_matches = document.querySelectorAll('.family_box:checked');
+  var selected_families = [];
   for(var i = 0; i < family_matches.length; i++){
-    console.log(family_matches[i].name);
+    selected_families.push(family_matches[i].name);
   }
+
+  // Build the list of species from the selected families
+  for(var f = 0; f < selected_families.length; f++){
+    for(var i =0; i < birdFamiliesJSON[selected_families[f]].length; i++){
+      speciesSelected.push(birdFamiliesJSON[selected_families[f]][i]);
+    }
+  }
+
+  // Print the list of selected species for debugging
+  console.log(speciesSelected);
 
 
   console.log('Start button clicked!');
@@ -170,13 +186,11 @@ function mcButtonSelected(id){
   if (id == curSpecies){
     curScore++;
     totalSongs++;
-    console.log("CORRECT!");
     responseElement.innerHTML = "Correct! " + curScore + '/' + totalSongs;
     
   }
   else{
     totalSongs++;
-    console.log("INCORRECT!");
     responseElement.innerHTML = "Incorrect! " + curScore + '/' + totalSongs;
   }
 
