@@ -47,7 +47,7 @@ function getBirdFamilies(){
   $.getJSON("families.json", function(json) {
       for (var key in json){
         var newDiv = document.createElement('div');
-        newDiv.innerHTML = key;
+        // newDiv.innerHTML = key;
         var checkbox = document.createElement('input');
         checkbox.type = "checkbox";
         checkbox.name = key;
@@ -55,6 +55,12 @@ function getBirdFamilies(){
         checkbox.value = true;
         checkbox.className = "family_box"
         newDiv.appendChild(checkbox);
+       
+        var label = document.createElement('label');
+        label.htmlFor = key;
+        label.innerHTML = key;
+        newDiv.appendChild(label);
+
         familyChecksElement.appendChild(newDiv);
       }
 
@@ -159,11 +165,13 @@ startButton.addEventListener('click', function() {
   var sound_type_matches = document.querySelectorAll(".sound_type_box:checked");
   for(var i = 0; i < sound_type_matches.length; i++){
     var cur_sound_type = sound_type_matches[i].name;
+    // console.log(sound_type_matches[i].name);
     if(cur_sound_type == "Songs"){
       song_bool = true;
     } else if (cur_sound_type == "Calls"){
       call_bool = true;
-    } 
+    }
+
   }
 
   // Build the list of selected families from the checkboxes
@@ -172,6 +180,8 @@ startButton.addEventListener('click', function() {
   for(var i = 0; i < family_matches.length; i++){
     selected_families.push(family_matches[i].name);
   }
+
+ 
 
   // Build the list of species from the selected families
   for(var f = 0; f < selected_families.length; f++){
@@ -185,11 +195,17 @@ startButton.addEventListener('click', function() {
 
 
   console.log('Start button clicked!');
-  selectorPageElement.remove();
-  startButton.remove();
-  citationList = citationList.split('\n');
+
   // start the quiz with the first setup
-  getNextSetup();
+  if(selected_families.length != 0){
+    if(song_bool == true || call_bool == true){
+      selectorPageElement.remove();
+      startButton.remove();
+      citationList = citationList.split('\n');
+      getNextSetup();
+    }
+  }
+  
 });
 
 // onClick for MC Buttons to determine answer 

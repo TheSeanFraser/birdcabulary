@@ -13,12 +13,15 @@
 			<div id="selector_wrapper">
 				<p id="prompt">Test your Ontario bird song knowledge.</p>
 				<div id="checkboxes">
-					<p>Select sound type:</p>
+					<h3>Select sound type:</h3>
 					<div id="sound_types_response">
-						<div>Songs <input class="sound_type_box" type="checkbox" name="Songs" checked="checked"></div>
-						<div>Calls <input class="sound_type_box" type="checkbox" name="Calls"></div>
+						<input id = "songs" class="sound_type_box" type="checkbox" name="Songs" checked="checked">
+						<label for="songs">Songs</label>
+						<input id= "calls" class="sound_type_box" type="checkbox" name="Calls">
+						<label for="calls">Calls</label>
+						<p>If no calls are available for the species, a song will be played instead.</p>
 					</div>
-					<p>Select bird families:</p>
+					<h3>Select bird families:</h3>
 					<div id="family_response">
 						<!-- This div will be automatically filled with bird families -->
 					</div>
