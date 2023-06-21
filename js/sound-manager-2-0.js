@@ -20,7 +20,7 @@ var curScore = 0;
 var totalSongs = 0;
 
 var birdFamiliesJSON = {};
-var speciesSelected = [];
+var listOfSelectedSpecies = [];
 
 var song_bool = false;
 var call_bool = false;
@@ -71,56 +71,67 @@ function getNextSetup(){
   // Stop current audio if playing
   audio.pause();
 
-  var speciesNumList = [];
+  var speciesIndexList = [];
 
   // Get the database file and select a species and sound
   $.getJSON("database.json", function(json) {
-      // console.log(json);
       // Clear buttons first
       mcButtons.innerHTML="";
 
       // Pick species from the preselected list of families
-      var selected_species = Math.floor(Math.random() * speciesSelected.length);
-      
+      var selected_species_index = Math.floor(Math.random() * listOfSelectedSpecies.length);
+      console.log("sel species: "+ selected_species_index);
+
       // Match the species to the index in the database
-      var speciesSelector = 0;
+      var curSpeciesIndex = 0;
       for(var i = 0; i < json.species.length; i++){
-        if(json.species[i].name == speciesSelected[selected_species]){
-          speciesSelector = i
+        if(json.species[i].name == listOfSelectedSpecies[selected_species_index]){
+          curSpeciesIndex = i
         }
       }
 
       // Add current species index to the index list for the MC buttons
-      speciesNumList.push(speciesSelector);
+      speciesIndexList.push(curSpeciesIndex);
 
       // Get species name
-      curSpecies = json.species[speciesSelector].name;
-      // console.log("Current species: " + curSpecies);
+      curSpecies = json.species[curSpeciesIndex].name;
 
       // Get and play a random song for the species
-      var songSelector = Math.floor(Math.random() * json.species[speciesSelector].songs.length);
-      curSound =  json.species[speciesSelector].songs[songSelector];
-      // console.log("Current sound: " + curSound);
+      // TODO: add call selection
+      var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].songs.length);
+      curSound =  json.species[curSpeciesIndex].songs[songSelector];
 
       // Get and set the citation for the current sound
       var matches = citationList.filter(s => s.includes(curSound.slice(0, -4)));
       citationElement.innerHTML = "Current sound's source: <br>" + matches[0];
 
       // Select 3 extra random species for buttons
-      while (speciesNumList.length < 4){
-        var r = Math.floor(Math.random() * json.species.length)
-        if(speciesNumList.indexOf(r) === -1) speciesNumList.push(r);
+      //TODO: only select extra options from selected families
+      while (speciesIndexList.length < 4){
+        // Pick species from the preselected list of families
+        var rand_species = Math.floor(Math.random() * listOfSelectedSpecies.length);
+        console.log("sel species: "+ selected_species_index);
+
+        // Match the species to the index in the database
+        var newSpeciesIndex = 0;
+        for(var i = 0; i < json.species.length; i++){
+          if(json.species[i].name == listOfSelectedSpecies[rand_species]){
+            newSpeciesIndex = i
+          }
+        }
+        // If the species isn't already in the list, add it
+        if(speciesIndexList.indexOf(newSpeciesIndex) === -1) speciesIndexList.push(newSpeciesIndex);
       }
 
       //Set the buttons up, need list of species first
       var speciesList = [];
-      for (var i = 0; i < speciesNumList.length; i++){
-        curIndex = speciesNumList[i];
+      for (var i = 0; i < speciesIndexList.length; i++){
+        curIndex = speciesIndexList[i];
         curName = json.species[curIndex].name;
         speciesList.push(curName);
       }
       speciesList = speciesList.sort((a, b) => 0.5 - Math.random());
-      setButtons(mcButtons,speciesList)
+      setButtons(mcButtons,speciesList);
 
       // Play the sound
       var songPath = "https://theseanfraser.github.io/birdcabulary/sounds/" + curSound;
@@ -165,12 +176,12 @@ startButton.addEventListener('click', function() {
   // Build the list of species from the selected families
   for(var f = 0; f < selected_families.length; f++){
     for(var i =0; i < birdFamiliesJSON[selected_families[f]].length; i++){
-      speciesSelected.push(birdFamiliesJSON[selected_families[f]][i]);
+      listOfSelectedSpecies.push(birdFamiliesJSON[selected_families[f]][i]);
     }
   }
 
   // Print the list of selected species for debugging
-  console.log(speciesSelected);
+  console.log(listOfSelectedSpecies);
 
 
   console.log('Start button clicked!');
