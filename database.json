@@ -628,6 +628,65 @@
                 "XC753120.mp3"
             ],
             "calls": []
+        },
+        {
+            "name": "Tree Swallow",
+            "code": "TRES",
+            "songs": [
+                "XC163174.mp3",
+                "XC236558.mp3",
+                "XC570129.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Bank Swallow",
+            "code": "BANS",
+            "songs": [
+                "XC181785.mp3",
+                "XC511277.mp3",
+                "XC734892.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Cliff Swallow",
+            "code": "CLSW",
+            "songs": [
+                "XC265499.mp3",
+                "XC636525.mp3",
+                "XC737195.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Northern Rough-winged Swallow",
+            "code": "NRWS",
+            "songs": [
+                "XC420370.mp3",
+                "XC511276.mp3",
+                "XC534846.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Purple Martin",
+            "code": "PUMA",
+            "songs": [
+                "XC563217.mp3",
+                "XC734889.mp3",
+                "XC776328.mp3"
+            ],
+            "calls": []
+        },
+        {
+            "name": "Barn Swallow",
+            "code": "BARS",
+            "songs": [
+                "XC753128.mp3",
+                "XC753130.mp3"
+            ],
+            "calls": []
         }
     ]
 }
