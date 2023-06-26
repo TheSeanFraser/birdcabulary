@@ -36,33 +36,33 @@
     "Canada Warbler",
     "Wilson's Warbler"
   ],
-    "Vireos": [
-      "White-eyed Vireo",
-      "Yellow-throated Vireo",
-      "Blue-headed Vireo",
-      "Philadelphia Vireo",
-      "Warbling Vireo",
-      "Red-eyed Vireo"
+  "Vireos": [
+    "White-eyed Vireo",
+    "Yellow-throated Vireo",
+    "Blue-headed Vireo",
+    "Philadelphia Vireo",
+    "Warbling Vireo",
+    "Red-eyed Vireo"
   ],
-    "Tyrant Flycatchers: Pewees, Kingbirds, and Allies": [
-      "Olive-sided Flycatcher",
-      "Eastern Wood-Pewee",
-      "Yellow-bellied Flycatcher",
-      "Acadian Flycatcher",
-      "Alder Flycatcher",
-      "Willow Flycatcher",
-      "Least Flycatcher",
-      "Eastern Phoebe",
-      "Great Crested Flycatcher",
-      "Eastern Kingbird"
+  "Tyrant Flycatchers: Pewees, Kingbirds, and Allies": [
+    "Olive-sided Flycatcher",
+    "Eastern Wood-Pewee",
+    "Yellow-bellied Flycatcher",
+    "Acadian Flycatcher",
+    "Alder Flycatcher",
+    "Willow Flycatcher",
+    "Least Flycatcher",
+    "Eastern Phoebe",
+    "Great Crested Flycatcher",
+    "Eastern Kingbird"
   ],
-    "Martins and Swallows": [
-      "Northern Rough-winged Swallow",
-      "Purple Martin",
-      "Tree Swallow",
-      "Bank Swallow",
-      "Barn Swallow",
-      "Cliff Swallow"
+  "Martins and Swallows": [
+    "Northern Rough-winged Swallow",
+    "Purple Martin",
+    "Tree Swallow",
+    "Bank Swallow",
+    "Barn Swallow",
+    "Cliff Swallow"
   ],
 }
   
