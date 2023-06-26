@@ -29,7 +29,7 @@ var call_bool = false;
 // To get citation list, it must be done asynchronously
 async function getCitations(){
   // Get citation list
-  const url = "https://theseanfraser.github.io/birdcabulary/warbler-citations-list.txt"
+  const url = "https://theseanfraser.github.io/birdcabulary/citations.txt"
   let response = await fetch(url);
   let citationsFromWeb = await response.text();
   return citationsFromWeb;
