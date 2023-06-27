@@ -12,7 +12,6 @@ const selectorPageElement = document.getElementById('selector_page');
 
 var audio = new Audio();
 
-var citationList = "";
 var citationsJSON = {};
 var curSpecies = "";
 var curSound = "";
@@ -26,21 +25,6 @@ var listOfSelectedSpecies = [];
 var song_bool = false;
 var call_bool = false;
 
-
-// To get citation list, it must be done asynchronously
-async function getCitations(){
-  // Get citation list
-  const url = "https://theseanfraser.github.io/birdcabulary/citations.txt"
-  let response = await fetch(url);
-  let citationsFromWeb = await response.text();
-  return citationsFromWeb;
-}
-
-async function callGetCitations() {
-    citationList = await this.getCitations();         
-}
-
-callGetCitations();
 
 
 function getCitationsJSON(){
@@ -121,9 +105,8 @@ function getNextSetup(){
       curSound =  json.species[curSpeciesIndex].songs[songSelector];
 
       // Get and set the citation for the current sound
-      //TODO: change to JSON citations
-      var matches = citationList.filter(s => s.includes(curSound.slice(0, -4)));
-      citationElement.innerHTML = "Current sound's source: <br>" + matches[0];
+      citationStr = citationsJSON[curSound];
+      citationElement.innerHTML = citationStr;
 
       // Select 3 extra random species for buttons
       while (speciesIndexList.length < 4){
@@ -214,7 +197,6 @@ startButton.addEventListener('click', function() {
     if(song_bool == true || call_bool == true){
       selectorPageElement.remove();
       startButton.remove();
-      citationList = citationList.split('\n');
       getNextSetup();
     }
   }
