@@ -13,6 +13,7 @@ const selectorPageElement = document.getElementById('selector_page');
 var audio = new Audio();
 
 var citationList = "";
+var citationsJSON = {};
 var curSpecies = "";
 var curSound = "";
 var curCitation = "";
@@ -40,6 +41,18 @@ async function callGetCitations() {
 }
 
 callGetCitations();
+
+
+function getCitationsJSON(){
+    // Get the citations
+  $.getJSON("citations.json", function(json) {
+      citationsJSON = json;
+  });
+
+}
+
+getCitationsJSON();
+
 
 // Populate bird families checkboxes
 function getBirdFamilies(){
@@ -108,11 +121,11 @@ function getNextSetup(){
       curSound =  json.species[curSpeciesIndex].songs[songSelector];
 
       // Get and set the citation for the current sound
+      //TODO: change to JSON citations
       var matches = citationList.filter(s => s.includes(curSound.slice(0, -4)));
       citationElement.innerHTML = "Current sound's source: <br>" + matches[0];
 
       // Select 3 extra random species for buttons
-      //TODO: only select extra options from selected families
       while (speciesIndexList.length < 4){
         // Pick species from the preselected list of families
         var rand_species = Math.floor(Math.random() * listOfSelectedSpecies.length);
@@ -140,7 +153,7 @@ function getNextSetup(){
       setButtons(mcButtons,speciesList);
 
       // Play the sound
-      var songPath = "https://theseanfraser.github.io/birdcabulary/sounds/" + curSound;
+      var songPath = "https://theseanfraser.github.io/birdcabulary/sounds/" + curSound + ".mp3";
       audio.src = songPath;
       audio.load();
       audio.play();
