@@ -81,7 +81,7 @@ function getNextSetup(){
       // Clear buttons first
       mcButtons.innerHTML="";
 
-      // Pick species from the preselected list of families
+      // Pick a random species from the preselected list of families
       var selected_species_index = Math.floor(Math.random() * listOfSelectedSpecies.length);
       console.log("sel species: "+ selected_species_index);
 
@@ -104,11 +104,38 @@ function getNextSetup(){
       var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].songs.length);
       curSound =  json.species[curSpeciesIndex].songs[songSelector];
 
+      // Determine whether to play a song or call
+      // TODO: add call selection
+      if(song_bool && call_bool){
+        console.log("call and song selected")
+        // Randomly generate a number to decide between call and song
+        var callOrSongDecider = Math.round(Math.random() * 1);
+        if (callOrSongDecider == 0){
+          console.log("Decided on SONG")
+          var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].songs.length);
+          curSound =  json.species[curSpeciesIndex].songs[songSelector];
+        } else {
+          console.log("Decided on CALL")
+          // Select call
+          var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].songs.length);
+          curSound =  json.species[curSpeciesIndex].songs[songSelector];
+        }
+      } else if (song_bool){
+        // Select song
+        var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].songs.length);
+        curSound =  json.species[curSpeciesIndex].songs[songSelector];
+      } else {
+        // Select call
+        var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].songs.length);
+        curSound =  json.species[curSpeciesIndex].songs[songSelector];
+      }
+
       // Get and set the citation for the current sound
       citationStr = citationsJSON[curSound];
       citationElement.innerHTML = citationStr;
 
       // Select 3 extra random species for buttons
+      // TODO: select 3 extra species based on similar song/call list
       while (speciesIndexList.length < 4){
         // Pick species from the preselected list of families
         var rand_species = Math.floor(Math.random() * listOfSelectedSpecies.length);
