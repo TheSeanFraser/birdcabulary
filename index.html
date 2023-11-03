@@ -4,38 +4,58 @@
 		<title>Birdcabulary</title>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<!-- <script src="js/playSound.js"></script> -->
-		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/styles-2-0.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<audio id="audio"></audio>
 		<h1>Birdcabulary</h1>
-		<div id="top_wrapper">
-			<div id="top_content">
-				<p id="prompt">Test your Ontario warbler song knowledge.</p>
-		  		<div id="response"></div>
-		  		<div id="prevCorrect"></div>
-		  		
-	  		</div>
-		</div>
-
-		<div id="citation_wrapper">
-			<div id="citation_content">
-				<div id="citation"></div>
+		<div id="selector_page">
+			<div id="selector_wrapper">
+				<p id="prompt">Test your Ontario bird song and call knowledge.</p>
+				<p><u>--- THIS VERSION IS STILL IN DEVELOPMENT ---</u></p>
+				<div id="checkboxes">
+					<h3>Select sound type:</h3>
+					<div id="sound_types_response">
+						<input id = "songs" class="sound_type_box" type="checkbox" name="Songs" checked="checked">
+						<label for="songs">Songs</label>
+						<input id= "calls" class="sound_type_box" type="checkbox" name="Calls">
+						<label for="calls">Calls</label>
+						<p>If no calls are available for the species, a song will be played instead.</p>
+					</div>
+					<h3>Select bird families or pack:</h3>
+					<div id="family_response">
+						<!-- This div will be automatically filled with bird families -->
+					</div>
+				</div>
 			</div>
 		</div>
-		
-		<div id="button_wrapper"> 
-			<div id="mcButtons" class="btn-group">
-  				<button id="start-button">Play</button>
-  			</div>
-			
-		</div>
+		<div id="main_page">
+			<audio id="audio"></audio>
+			<div id="top_wrapper">
+				<div id="top_content">
+			  		<div id="response"></div>
+			  		<div id="prevCorrect"></div>
+			  		
+		  		</div>
+			</div>
 
-		
+			<div id="citation_wrapper">
+				<div id="citation_content">
+					<div id="citation"></div>
+				</div>
+			</div>
+			
+			<div id="button_wrapper"> 
+				<div id="mcButtons" class="btn-group">
+	  				<button id="start-button">Play</button>
+	  			</div>
+				
+			</div>
+
+		</div>
 	</body>
 	
-	<script src="js/sound-manager.js"></script>
+	<script src="js/sound-manager-2-0.js"></script>
 
 	<footer id="footer">
 		
