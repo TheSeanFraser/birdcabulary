@@ -689,6 +689,104 @@
                 "XC753130"
             ],
             "calls": []
+        },
+        {
+            "name": "Eastern Bluebird",
+            "code": "EABL",
+            "songs": [
+                "XC18391.mp3",
+                "XC408998.mp3",
+                "XC570566.mp3",
+                "XC601011.mp3",
+                "XC638302.mp3"
+            ],
+            "calls": [],
+            "song-similar": [],
+            "call-similar": []
+        },
+        {
+            "name": "Grey-cheeked Thrush",
+            "code": "GCTH",
+            "songs": [
+                "XC323009.mp3",
+                "XC354779.mp3",
+                "XC406177.mp3",
+                "XC420272.mp3",
+                "XC736335.mp3"
+            ],
+            "calls": [],
+            "song-similar": [],
+            "call-similar": []
+        },
+        {
+            "name": "Veery",
+            "code": "VEER",
+            "songs": [
+                "XC390770.mp3",
+                "XC467384.mp3",
+                "XC567904.mp3",
+                "XC602571.mp3",
+                "XC628421.mp3"
+            ],
+            "calls": [],
+            "song-similar": [],
+            "call-similar": []
+        },
+        {
+            "name": "Hermit Thrush",
+            "code": "HETH",
+            "songs": [
+                "XC691467.mp3",
+                "XC691468.mp3",
+                "XC691469.mp3",
+                "XC715748.mp3",
+                "XC818449.mp3"
+            ],
+            "calls": [],
+            "song-similar": [],
+            "call-similar": []
+        },
+        {
+            "name": "Swainson's Thrush",
+            "code": "SWTH",
+            "songs": [
+                "XC692187.mp3",
+                "XC692188.mp3",
+                "XC749774.mp3",
+                "XC814439.mp3",
+                "XC827189.mp3"
+            ],
+            "calls": [],
+            "song-similar": [],
+            "call-similar": []
+        },
+        {
+            "name": "American Robin",
+            "code": "AMRO",
+            "songs": [
+                "XC723888.mp3",
+                "XC728269.mp3",
+                "XC729934.mp3",
+                "XC734125.mp3",
+                "XC749773.mp3"
+            ],
+            "calls": [],
+            "song-similar": [],
+            "call-similar": []
+        },
+        {
+            "name": "Wood Thrush",
+            "code": "WOTH",
+            "songs": [
+                "XC724428.mp3",
+                "XC739057.mp3",
+                "XC771930.mp3",
+                "XC800821.mp3",
+                "XC817713.mp3"
+            ],
+            "calls": [],
+            "song-similar": [],
+            "call-similar": []
         }
     ]
 }
