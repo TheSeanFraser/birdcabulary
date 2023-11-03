@@ -148,7 +148,7 @@ function getNextSetup(){
 					curSound =  json.species[curSpeciesIndex].songs[songSelector];
 				} else {
 					var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].calls.length);
-					curSound =  json.species[curSpeciesIndex].songs[songSelector];
+					curSound =  json.species[curSpeciesIndex].calls[songSelector];
 				}
 			}
 
