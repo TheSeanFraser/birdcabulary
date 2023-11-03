@@ -1,0 +1,26 @@
+{
+	"song-similar": [
+		{
+			"buzzy-warblers": [
+				"Black-throated Blue Warbler",
+				"Black-throated Green Warbler"
+			],
+			"thrushes": [
+				"Veery",
+				"Gray-cheeked Thrush",
+				"Swainson's Thrush"
+			]
+		}
+	],
+	"call-similar": [
+		{			
+			"warbler-chips": [
+				"Cape May Warbler",
+				"Nashville Warbler",
+			],
+			"thrushes": [
+				
+			]
+		}
+	],
+}
