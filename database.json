@@ -738,8 +738,8 @@
                 "XC163174",
                 "XC236558",
                 "XC570129",
-                "XC446452.mp3",
-                "XC446452.mp3"
+                "XC446452",
+                "XC446452"
             ],
             "calls": [],
             "song-similar": [],
@@ -808,16 +808,16 @@
             "name": "Eastern Bluebird",
             "code": "EABL",
             "songs": [
-                "XC18391.mp3",
-                "XC408998.mp3",
-                "XC570566.mp3",
-                "XC601011.mp3",
-                "XC638302.mp3"
+                "XC18391",
+                "XC408998",
+                "XC570566",
+                "XC601011",
+                "XC638302"
             ],
             "calls": [
-                "XC154307.mp3",
-                "XC337448.mp3",
-                "XC604632.mp3"
+                "XC154307",
+                "XC337448",
+                "XC604632"
             ],
             "song-similar": [],
             "call-similar": []
@@ -826,11 +826,11 @@
             "name": "Grey-cheeked Thrush",
             "code": "GCTH",
             "songs": [
-                "XC323009.mp3",
-                "XC354779.mp3",
-                "XC406177.mp3",
-                "XC420272.mp3",
-                "XC736335.mp3"
+                "XC323009",
+                "XC354779",
+                "XC406177",
+                "XC420272",
+                "XC736335"
             ],
             "calls": [],
             "song-similar": [],
@@ -840,11 +840,11 @@
             "name": "Veery",
             "code": "VEER",
             "songs": [
-                "XC390770.mp3",
-                "XC467384.mp3",
-                "XC567904.mp3",
-                "XC602571.mp3",
-                "XC628421.mp3"
+                "XC390770",
+                "XC467384",
+                "XC567904",
+                "XC602571",
+                "XC628421"
             ],
             "calls": [],
             "song-similar": [],
@@ -854,11 +854,11 @@
             "name": "Hermit Thrush",
             "code": "HETH",
             "songs": [
-                "XC691467.mp3",
-                "XC691468.mp3",
-                "XC691469.mp3",
-                "XC715748.mp3",
-                "XC818449.mp3"
+                "XC691467",
+                "XC691468",
+                "XC691469",
+                "XC715748",
+                "XC818449"
             ],
             "calls": [],
             "song-similar": [],
@@ -868,11 +868,11 @@
             "name": "Swainson's Thrush",
             "code": "SWTH",
             "songs": [
-                "XC692187.mp3",
-                "XC692188.mp3",
-                "XC749774.mp3",
-                "XC814439.mp3",
-                "XC827189.mp3"
+                "XC692187",
+                "XC692188",
+                "XC749774",
+                "XC814439",
+                "XC827189"
             ],
             "calls": [],
             "song-similar": [],
@@ -882,11 +882,11 @@
             "name": "American Robin",
             "code": "AMRO",
             "songs": [
-                "XC723888.mp3",
-                "XC728269.mp3",
-                "XC729934.mp3",
-                "XC734125.mp3",
-                "XC749773.mp3"
+                "XC723888",
+                "XC728269",
+                "XC729934",
+                "XC734125",
+                "XC749773"
             ],
             "calls": [],
             "song-similar": [],
@@ -896,11 +896,11 @@
             "name": "Wood Thrush",
             "code": "WOTH",
             "songs": [
-                "XC724428.mp3",
-                "XC739057.mp3",
-                "XC771930.mp3",
-                "XC800821.mp3",
-                "XC817713.mp3"
+                "XC724428",
+                "XC739057",
+                "XC771930",
+                "XC800821",
+                "XC817713"
             ],
             "calls": [],
             "song-similar": [],
@@ -911,10 +911,10 @@
             "code": "AMPI",
             "songs": [],
             "calls": [
-                "XC153412.mp3",
-                "XC188038.mp3",
-                "XC358842.mp3",
-                "XC620543.mp3"
+                "XC153412",
+                "XC188038",
+                "XC358842",
+                "XC620543"
             ],
             "song-similar": [],
             "call-similar": []
@@ -924,8 +924,8 @@
             "code": "SNBU",
             "songs": [],
             "calls": [
-                "XC160306.mp3",
-                "XC205574.mp3"
+                "XC160306",
+                "XC205574"
             ],
             "song-similar": [],
             "call-similar": []
@@ -935,11 +935,11 @@
             "code": "RECR",
             "songs": [],
             "calls": [
-                "XC160411.mp3",
-                "XC426279.mp3",
-                "XC466347.mp3",
-                "XC466353.mp3",
-                "XC483853.mp3"
+                "XC160411",
+                "XC426279",
+                "XC466347",
+                "XC466353",
+                "XC483853"
             ],
             "song-similar": [],
             "call-similar": []
@@ -949,8 +949,8 @@
             "code": "WWCR",
             "songs": [],
             "calls": [
-                "XC188349.mp3",
-                "XC188351.mp3"
+                "XC188349",
+                "XC188351"
             ],
             "song-similar": [],
             "call-similar": []
@@ -960,8 +960,8 @@
             "code": "PISI",
             "songs": [],
             "calls": [
-                "XC225796.mp3",
-                "XC593867.mp3"
+                "XC225796",
+                "XC593867"
             ],
             "song-similar": [],
             "call-similar": []
@@ -971,9 +971,9 @@
             "code": "PUFI",
             "songs": [],
             "calls": [
-                "XC339649.mp3",
-                "XC339653.mp3",
-                "XC342339.mp3"
+                "XC339649",
+                "XC339653",
+                "XC342339"
             ],
             "song-similar": [],
             "call-similar": []
@@ -983,8 +983,8 @@
             "code": "HOLA",
             "songs": [],
             "calls": [
-                "XC535603.mp3",
-                "XC690861.mp3"
+                "XC535603",
+                "XC690861"
             ],
             "song-similar": [],
             "call-similar": []
