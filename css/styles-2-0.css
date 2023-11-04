@@ -40,33 +40,42 @@ button {
   font-size: 16px;
 }
 
-  #selector_wrapper {
-    margin: auto;
-    background-color: #0f0f0f;
-    height: 20%;
-    width: 80%;
-    border-radius: 8px;
-    padding: 10px;
-  }
+#selector_wrapper {
+  margin: auto;
+  background-color: #0f0f0f;
+  height: 20%;
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+}
 
-  #top_wrapper {
-    margin: auto;
-    background-color: #0f0f0f;
-    height: 20%;
-    width: 80%;
-    border-radius: 8px;
-    padding: 10px;
-  }
+#top_wrapper {
+  margin: auto;
+  background-color: #0f0f0f;
+  height: 20%;
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+}
 
-  #citation_wrapper {
+#citation_wrapper {
+  margin: auto;
+  margin-top: 20px;
+  background-color: #0f0f0f;
+  height: 20%;
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#text_wrapper {
     margin: auto;
-    margin-top: 20px;
     background-color: #0f0f0f;
     height: 20%;
     width: 80%;
     border-radius: 8px;
     padding: 10px;
-  }
+}
 
 
 footer{
