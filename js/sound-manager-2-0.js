@@ -135,10 +135,16 @@ function getNextSetup(){
 					}
 				}
 			} 
-			else if (song_bool){
-				// Select song
-				var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].songs.length);
-				curSound =  json.species[curSpeciesIndex].songs[songSelector];
+			else if (song_bool){  
+        // Select song if available, otherwise select a song
+        if(json.species[curSpeciesIndex].songs.length == 0){
+          console.log("No song available");
+          var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].calls.length);
+          curSound =  json.species[curSpeciesIndex].calls[songSelector];
+        } else {
+          var songSelector = Math.floor(Math.random() * json.species[curSpeciesIndex].songs.length);
+          curSound =  json.species[curSpeciesIndex].songs[songSelector];
+        }
 			} 
 			else {
 				// Select call if available, otherwise select a song
