@@ -2,6 +2,8 @@
 const startButton = document.getElementById('start-button');
 const mcButtons = document.getElementById('mcButtons');
 const citationElement = document.getElementById('citation');
+const citationWrapperElement = document.getElementById('citation_wrapper');
+const topWrapperElement = document.getElementById('top_wrapper');
 const audioElement = document.getElementById('audio');
 const responseElement = document.getElementById('response');
 const prevCorrectElement = document.getElementById('prevCorrect');
@@ -25,6 +27,13 @@ var listOfSelectedSpecies = [];
 var song_bool = false;
 var call_bool = false;
 
+// Set some of the page up on load
+function onPageLoad(){
+  citationWrapperElement.style.display = "none";
+  topWrapperElement.style.display = "none";
+}
+
+onPageLoad();
 
 
 function getCitationsJSON(){
@@ -73,6 +82,9 @@ getBirdFamilies();
 function getNextSetup(){
 	// Stop current audio if playing
 	audio.pause();
+  // Start displaying game elements
+  citationWrapperElement.style.display = "block";
+  topWrapperElement.style.display = "block";
 
 	var speciesIndexList = [];
 
